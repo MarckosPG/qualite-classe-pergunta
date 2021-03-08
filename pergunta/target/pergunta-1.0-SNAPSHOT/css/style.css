@@ -129,6 +129,17 @@ hr{
 	outline: none;
 }
 
+.pergunta-resposta-edit{
+        margin: 0;
+	border: 0;
+	padding-top: 14px;
+        padding-bottom: 14px;
+	background: #ffffff;
+	border-radius: 8px;
+	outline: none;
+        text-weight: bold;
+}
+
 .counter-pesquisa{
 	text-align: right;
 	padding-right: 16px;
@@ -204,6 +215,9 @@ hr{
 	.pergunta-resposta{
 		width: 85%;
 	}
+        .pergunta-resposta-edit{
+            width: 85%;
+        }
 }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
 	.pesquisa{
@@ -212,6 +226,9 @@ hr{
 	.pergunta-resposta{
 		width: 85%;
 	}
+        .pergunta-resposta-edit{
+            width: 85%;
+        }
 }
 @media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
 	.pesquisa{
@@ -220,6 +237,9 @@ hr{
 	.pergunta-resposta{
 		width: 90%;
 	}
+        .pergunta-resposta-edit{
+            width: 90%;
+        }
 }
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
 	.pesquisa{
@@ -228,6 +248,9 @@ hr{
 	.pergunta-resposta{
 		width: 90%;
 	}
+        .pergunta-resposta-edit{
+            width: 90%;
+        }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
 	.pesquisa{
@@ -236,6 +259,9 @@ hr{
 	.pergunta-resposta{
 		width: 90%;
 	}
+        .pergunta-resposta-edit{
+            width: 90%;
+        }
 }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ 
 	.pesquisa{
@@ -244,4 +270,7 @@ hr{
 	.pergunta-resposta{
 		width: 90%;
 	}
+        .pergunta-resposta-edit{
+            width: 90%;
+        }
 }

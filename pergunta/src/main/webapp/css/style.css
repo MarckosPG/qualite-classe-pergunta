@@ -90,10 +90,20 @@ hr{
 	font-size: 18px;
 }
 
+.titulo-sessao-edit{
+	border: 0;
+	outline: none;
+	text-align: center;
+	color: gray;
+	font-weight: bold;
+	font-variant: 100;
+	font-size: 18px;
+}
+
 .list-perguntas{}
 
 .pergunta-item{
-        background: #fff;
+    background: #fff;
 	border: solid 1.5px #f3f3f3;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -127,6 +137,41 @@ hr{
 	background: #f3f3f3;
 	border-radius: 8px;
 	outline: none;
+}
+
+.pergunta-resposta-edit{
+    margin: 0;
+	border: 0;
+	padding-top: 14px;
+    padding-bottom: 0px;
+	background: #ffffff;
+	border-radius: 8px;
+	outline: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.select-form{
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	border: 0;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+	background: #fff;
+	width: 96%;
+	border-radius: 8px;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+	color: gray;
+	background: #fff;
+	border-left: solid #00a2ff 5px;
+}
+
+.select-form option{
+	background: #fff;
+	border-left: solid #00a2ff 5px;
 }
 
 .counter-pesquisa{
@@ -204,6 +249,9 @@ hr{
 	.pergunta-resposta{
 		width: 85%;
 	}
+        .pergunta-resposta-edit{
+            width: 90%;
+        }
 }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
 	.pesquisa{
@@ -212,6 +260,9 @@ hr{
 	.pergunta-resposta{
 		width: 85%;
 	}
+        .pergunta-resposta-edit{
+            width: 90%;
+        }
 }
 @media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
 	.pesquisa{
@@ -220,6 +271,9 @@ hr{
 	.pergunta-resposta{
 		width: 90%;
 	}
+        .pergunta-resposta-edit{
+            width: 93%;
+        }
 }
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
 	.pesquisa{
@@ -228,6 +282,9 @@ hr{
 	.pergunta-resposta{
 		width: 90%;
 	}
+        .pergunta-resposta-edit{
+            width: 93%;
+        }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
 	.pesquisa{
@@ -236,6 +293,9 @@ hr{
 	.pergunta-resposta{
 		width: 90%;
 	}
+        .pergunta-resposta-edit{
+            width: 93%;
+        }
 }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ 
 	.pesquisa{
@@ -244,4 +304,91 @@ hr{
 	.pergunta-resposta{
 		width: 90%;
 	}
+        .pergunta-resposta-edit{
+            width: 93%;
+        }
+}
+
+.mt-15{margin-top: 5px;}
+.mpb-15{margin-bottom: 5px;}
+
+/**COMPONENTS**/
+
+.ctrl{
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.lbl-switch{
+	align-self: center; 
+	margin-top: -6px;
+	color: gray;
+	font-size: 12px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin-top: 8px; 
+  margin-bottom: 15px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

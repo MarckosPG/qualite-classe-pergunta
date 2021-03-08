@@ -27,48 +27,49 @@
                     <div class="pagina pagina-1">
                         <div class="sessao">
                             <div class="titulo-sessao">
-                                Titulo da seção
+                                <input type="text" class="titulo-sessao-edit" maxlegth="50" placeholder="Titulo da Seção">
                             </div>
                             <hr>
                             <div class="list-perguntas">
                                 
-                                <div class="pergunta-item" style="background: #ffffff;">
-                                    <div class="line">
-                                        <div class="pergunta-texto">Titulo da Pergunta</div>
-                                        <div class="i"><i class="fa fa-arrows" aria-hidden="true"></i></div>
+                                <div class="pergunta-item pi0" style="background: #ffffff;">
+                                    <div class="line" style="margin-bottom: 12px">
+                                        <input type="text" class="pergunta-resposta-edit pergunta-texto" maxlegth="50" placeholder="Titulo da Pergunta">
+                                        <div class="i move"><i class="fa fa-arrows" aria-hidden="true"></i></div>
+                                        <div class="i delete" data-id="0"><i class="fa fa-trash" aria-hidden="true"></i></div>
                                     </div>
-                                    <p class="pergunta-explicacao">explicaçao</p>
-                                    <input type="text" name="nome" class="pergunta-resposta" placeholder="Sua resposta" maxlength="50">
-                                    <div class="counter-pesquisa">50</div>
-                                    <div class="pergunta-lgpd"></div>
-                                </div>
-     
-                                <div class="pergunta-item" style="background: #ffffff;">
-                                    <div class="line">
-                                        <div class="pergunta-texto">Titulo da Pergunta</div>
-                                        <div class="i"><i class="fa fa-arrows" aria-hidden="true"></i></div>
+                                    <select class="select-form">
+                                        <option selected="" disabled="" value="">(Selecione o tipo da pergunta)</option>
+                                        <option>Texto Curto</option>
+                                        <option>Texto Longo</option>
+                                        <option>Número</option>
+                                    </select>
+                                    <div class="ctrl">
+                                        <label class="switch">
+                                          <input type="checkbox">
+                                          <span class="slider round"></span>
+                                        </label>
+                                        <label class="lbl-switch">&nbsp;Obrigatória*</label>
                                     </div>
-                                    <p class="pergunta-explicacao">explicaçao</p>
-                                    <input type="text" name="nome" class="pergunta-resposta" placeholder="Sua resposta" maxlength="50">
-                                    <div class="counter-pesquisa">50</div>
-                                    <div class="pergunta-lgpd"></div>
                                 </div>
-                                
-                                <div class="pergunta-item" style="background: #ffffff;">
-                                    <div class="line">
-                                        <div class="pergunta-texto">Titulo da Pergunta</div>
-                                        <div class="i"><i class="fa fa-arrows" aria-hidden="true"></i></div>
-                                    </div>
-                                    <p class="pergunta-explicacao">explicaçao</p>
-                                    <input type="text" name="nome" class="pergunta-resposta" placeholder="Sua resposta" maxlength="50">
-                                    <div class="counter-pesquisa">50</div>
-                                    <div class="pergunta-lgpd"></div>
-                                </div>
-                                
                                 
                             </div>
                         </div>
 
+                    </div>
+                    <div class="controles" style="">
+                        <div class="progress-bar"></div>
+                        <div class="buttons">
+                            <div class="previous btn add-pergunta">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                             <div class="previous btn add-section">
+                                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="previous btn save-pergunta" style="margin-right: 10px;">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>    
@@ -81,7 +82,51 @@
 
 <script>
     const dragArea = document.querySelector(".list-perguntas");
+
     new Sortable(dragArea, {
         animation: 350
     })
+
+    var piCount = 1;
+    $(".add-pergunta").click(function () {
+        $(".list-perguntas").append(`
+            <div class="pergunta-item pi${piCount}" style="background: #ffffff;">
+                <div class="line" style="margin-bottom: 12px">
+                    <input type="text" class="pergunta-resposta-edit pergunta-texto" maxlegth="50" placeholder="Titulo da Pergunta">
+                    <div class="i move"><i class="fa fa-arrows" aria-hidden="true"></i></div>
+                    <div class="i delete" data-id="${piCount}"><i class="fa fa-trash" aria-hidden="true"></i></div>
+                </div>
+                <select class="select-form">
+                    <option selected="" disabled="" value="">(Selecione o tipo da pergunta)</option>
+                    <option>Texto Curto</option>
+                    <option>Texto Longo</option>
+                    <option>Número</option>
+                    <option>Múltipla Escolha</option>
+                    <option>Única Escolha</option>
+                    <option>Envio de Arquivos</option>
+                </select>
+                <div class="ctrl">
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                    <label class="lbl-switch">&nbsp;Obrigatória*</label>
+                </div>
+            </div>
+        `)
+        piCount++;
+        setEventListener();
+    });
+
+    setEventListener();
+
+    function setEventListener () {
+        $(".delete").click(function () {
+            id = $(this).attr("data-id");
+            $(".pi"+id).slideUp('fast');
+            piCount--;
+        });
+    }
+
+    
 </script>
