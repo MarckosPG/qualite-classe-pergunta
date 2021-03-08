@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Perguntas</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/create.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <center>
+            <form method="post" class="form" style="margin-bottom: 0px;">
+                <div class="pesquisa">
+                    <div class="cabecalho">
+                        <div class="logo">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNbw29Fez1IoPG6M45QGCqRKEzvLTzYSHRFg&usqp=CAU">
+                        </div>
+                        <div class="texto-curto">
+                            Titulo da Pesquisa
+                        </div>
+                        <label class="pag-ind" style="color: gray; font-size: 10px;"></label>
+                    </div>
+                    <div class="pagina pagina-1">
+                        <div class="sessao">
+                            <div class="titulo-sessao">
+                                Titulo da seção
+                            </div>
+                            <hr>
+                            <div class="list-perguntas">
+                                
+                                <div class="pergunta-item" style="background: #ffffff;">
+                                    <div class="line">
+                                        <div class="pergunta-texto">Titulo da Pergunta</div>
+                                        <div class="i"><i class="fa fa-arrows" aria-hidden="true"></i></div>
+                                    </div>
+                                    <p class="pergunta-explicacao">explicaçao</p>
+                                    <input type="text" name="nome" class="pergunta-resposta" placeholder="Sua resposta" maxlength="50">
+                                    <div class="counter-pesquisa">50</div>
+                                    <div class="pergunta-lgpd"></div>
+                                </div>
+     
+                                <div class="pergunta-item" style="background: #ffffff;">
+                                    <div class="line">
+                                        <div class="pergunta-texto">Titulo da Pergunta</div>
+                                        <div class="i"><i class="fa fa-arrows" aria-hidden="true"></i></div>
+                                    </div>
+                                    <p class="pergunta-explicacao">explicaçao</p>
+                                    <input type="text" name="nome" class="pergunta-resposta" placeholder="Sua resposta" maxlength="50">
+                                    <div class="counter-pesquisa">50</div>
+                                    <div class="pergunta-lgpd"></div>
+                                </div>
+                                
+                                <div class="pergunta-item" style="background: #ffffff;">
+                                    <div class="line">
+                                        <div class="pergunta-texto">Titulo da Pergunta</div>
+                                        <div class="i"><i class="fa fa-arrows" aria-hidden="true"></i></div>
+                                    </div>
+                                    <p class="pergunta-explicacao">explicaçao</p>
+                                    <input type="text" name="nome" class="pergunta-resposta" placeholder="Sua resposta" maxlength="50">
+                                    <div class="counter-pesquisa">50</div>
+                                    <div class="pergunta-lgpd"></div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>    
+        </center>
+    </body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js" integrity="sha512-5x7t0fTAVo9dpfbp3WtE2N6bfipUwk7siViWncdDoSz2KwOqVC1N9fDxEOzk0vTThOua/mglfF8NO7uVDLRC8Q==" crossorigin="anonymous"></script>
+
+<script>
+    const dragArea = document.querySelector(".list-perguntas");
+    new Sortable(dragArea, {
+        animation: 350
+    })
+</script>

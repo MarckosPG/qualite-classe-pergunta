@@ -93,6 +93,7 @@ hr{
 .list-perguntas{}
 
 .pergunta-item{
+        background: #fff;
 	border: solid 1.5px #f3f3f3;
 	margin-left: 10px;
 	margin-right: 10px;
